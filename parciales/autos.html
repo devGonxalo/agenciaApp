@@ -1,0 +1,74 @@
+<br>
+<div class="row">
+	<div class="col-6 caja1">
+		<h1>Lista de Vehículos <i class="fas fa-stream"></i></h1>
+		<h4>Autos disponibles en stock</h4>
+	</div>
+	<div class="col-6 caja2">
+		
+	</div>
+</div>
+<br>
+<div class="d-flex flex-row bd-highlight mb-3">
+		<div class="p-2 bd-highlight">
+			<p class="lead">Filtrar por Marca:</p>
+		</div>
+		<div class="p-2 bd-highlight">
+			<select class="form-select form-select-sm" aria-label=".form-select-sm example" ng-model="buscar.marca" class="form-control">
+				<option value="">Todos</option>
+				<option value="VW">VW</option>
+				<option value="Peugeot">Peugeot</option>
+				<option value="Fiat">Fiat</option>
+				<option value="Renault">Renault</option>
+				<option value="Ford">Ford</option>
+				<option value="Chevrolet">Chevrolet</option>
+			</select>
+		</div>
+		<div class="col-3 caja1">
+
+		</div>
+		<div class="col-6">
+			<form class="d-flex">
+				<input class="form-control me-2" ng-model="buscar" type="search" placeholder="Buscar" aria-label="Search">
+			</form>
+		</div>
+</div>
+<!-- table-striped -->
+<div class="row">
+	<table class="table table-hover">
+		<tr class="navtabla">
+			<th><a class="puntero link-secondary" ng-click="columna='codigo'; reverse = !reverse;">#<i class="fas fa-sort"></i></a></th>
+			<th><a class="puntero link-secondary" ng-click="columna='marca'; reverse = !reverse;">Marca <i class="fas fa-sort"></i></a></th>
+			<th>Modelo</th>
+			<th>Color</th>
+			<th>Año</th>
+			<th><a class="puntero link-secondary" ng-click="columna='precio'; reverse = !reverse;">Precio <i class="fas fa-sort"></i></a></th>
+			<th>Ver/Editar</th>
+		</tr>
+
+		<tr ng-repeat="auto in autos | filter:buscar | limitTo:posicion | limitTo:-5 | orderBy:columna:reverse" >
+			<td> {{ auto.codigo }} </td>
+			<td> {{ auto.marca }} </td>
+			<td> {{ auto.modelo }} </td>
+			<td> {{ auto.color }} </td>
+			<td> {{ auto.ano }} </td>
+			<td> {{ auto.precio | currency }} </td>
+			<td> <a href="#/auto/{{ auto.codigo }}" >Ver/Editar</a> </td>
+		</tr>
+	</table>
+	<br> 
+	<div class="col">	
+		<button class="btn btn-blue" ng-click="anteriores()">
+			<i class="fas fa-chevron-left"></i> 
+		</button>
+
+		<button class="btn btn-blue" ng-click="siguientes()">
+			 <i class="fas fa-chevron-right"></i>
+		</button>
+	</div>
+	<div class="col caja2">     
+	  <a href="#/auto/nuevo" type="button" class="btn btn-success">
+		<i class="fas fa-upload"></i> Cargar auto</a>
+	</div>
+
+</div>

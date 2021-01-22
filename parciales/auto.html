@@ -1,0 +1,51 @@
+<h1>Auto</h1>
+<h4>{{ auto.marca }}</h4>
+
+<div class="row">
+	<form ng-submit="guardarAuto()">
+		
+		<div ng-hide="creando">
+		Id del Automovil:
+		<br>
+		<input type="text" class="form-control" ng-model="auto.codigo" readonly="readonly">
+		<br>
+		</div>
+
+		Marca:
+		<br>
+		<input type="text" class="form-control" ng-model="auto.marca" required placeholder="Marca del auto"> 
+		<br>
+
+		Modelo:
+		<br>
+		<input type="text" class="form-control" ng-model="auto.modelo"  required placeholder="Modelo del auto">
+		<br>
+
+		Color:
+		<br>
+		<input type="text" class="form-control" ng-model="auto.color"  required placeholder="Color del auto">
+		<br>
+
+	    Año:
+		<br>
+		<input type="text" class="form-control" ng-model="auto.ano" required placeholder="Año del auto">
+		<br>
+
+		Precio:
+		<br>
+		<input type="text" class="form-control" ng-model="auto.precio" required placeholder="Valor del auto">
+		<br>
+		<button type="submit" class="btn btn-primary">
+		<i class="far fa-save"></i>
+		Guardar Cambios
+		</button>
+		<a ng-href="#/autos" class="btn btn-danger">
+			<i class="far fa-window-close"></i>
+			Cancelar
+		</a>
+		
+		<p class="text-success animated fadeIn fast" ng-show="actualizado">Registro Actualizado</p>
+		<br><br>
+	</form>
+
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="agenciaApp" ng-controller="mainCtrl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Venta de Automóviles</title>
+
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+
+        <!-- Estilo personalizado -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/bootstrap.bundle.min.js"></script>
+        <!-- <script src="js/lib/ui-utils.min.js"></script> -->
+
+
+        <script src="js/app.js"></script>
+        <script src="js/config.js"></script>
+
+        <!-- Controladores de páginas -->
+        <script src="js/inicioCtrl.js"></script>
+        <script src="js/autosCtrl.js"></script>
+        <script src="js/autoCtrl.js"></script>
+
+
+        
+    </head>    
+    <body>
+        
+        <div ng-include="menuSuperior"></div>
+
+        
+        <div class="container">
+        <!-- La pagina principal ira aquí -->
+            
+            <div ng-view></div>
+
+        </div><!-- /.container -->
+
+
+    </body>
+</html>
